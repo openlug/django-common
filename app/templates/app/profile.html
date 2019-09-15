@@ -1,0 +1,18 @@
+{% extends "app/base.html" %}
+
+{% block title %}{{ name }} - 个人信息 {% endblock %}
+
+{% block content %}
+    <h1>{{ name }} - 个人信息</h1>
+    <h3>欢迎您，{{ username }}！</h3>
+    <p>{{ profile }}</p>
+
+    <p><a class="btn btn-danger" href="{% url 'logout' %}">退出账户</a></p>
+
+    <h4>Debug - Your cookie</h4>
+    <p id="cookie"></p>
+
+    <script>
+    document.getElementById("cookie").textContent = document.cookie;
+    </script>
+{% endblock %}
